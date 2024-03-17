@@ -1,0 +1,268 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+@import "@/styles/fontSize";
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+
+  .rightSide {
+    width: calc(100% - 220px);
+
+    //Tags Row
+    .tagsRow {
+      margin-bottom: 12px;
+
+      .tagItem {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 2px 8px;
+        margin-left: 4px;
+        margin-bottom: 8px;
+        font-size: $font-size-xs;
+        color: $neutral-700;
+        @include border-radius(8px);
+
+        &:last-child {
+          margin-left: 0;
+        }
+
+        &.charterTag {
+          background: $primary-100;
+        }
+
+        &.businessTag {
+          background: $warning-100;
+          color: $warning-500;
+        }
+
+
+        &.sysTag {
+          background: $neutral-200;
+        }
+
+        &.offerTag {
+          background: $tertiary-100;
+          color: $tertiary-500;
+        }
+      }
+    }
+
+    //Fly Time Row
+    .flyTimeRow {
+
+      .airline {
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 104px;
+        text-align: center;
+        margin-left: 16px;
+
+        .airlineLogo {
+          width: 40px;
+          height: 40px;
+          margin: 0 auto 8px;
+          overflow: hidden;
+          @include border-radius(50%);
+        }
+
+        .airlineName {
+          font-weight: normal;
+          line-height: normal;
+        }
+      }
+
+      .timeInfo {
+        display: inline-block;
+        vertical-align: middle;
+        min-width: 200px;
+        margin-left: 48px;
+
+        .col {
+          display: inline-block;
+          vertical-align: top;
+
+          .time {
+            font-family: "iransans-fnum-medium", sans-serif;
+            font-size: $font-size-xxl;
+            color: $neutral-700;
+          }
+
+          .city {
+            font-family: "iransans-fnum", sans-serif;
+            font-size: $font-size-xs;
+            color: $neutral-700;
+          }
+        }
+
+        img {
+          display: inline-block;
+          vertical-align: top;
+          margin: 8px 16px;
+        }
+      }
+
+      .diffTime {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .leftSide {
+    width: 200px;
+    max-width: 100%;
+    padding-right: 16px;
+    border-right: dashed 1px $neutral-400;
+
+    .remainingSeats {
+      min-height: 20px;
+      font-size: $font-size-xs;
+      color: $error-500;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      margin-bottom: 8px;
+      text-align: center;
+
+      .number {
+        font-family: 'iransans-fnum-medium', sans-serif;
+        font-size: $font-size-xl;
+        margin-left: 4px;
+      }
+
+      .currency {
+        font-size: $font-size-xs;
+      }
+    }
+
+    .toggleBtn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px 8px;
+      border: solid 2px $primary-500;
+      cursor: pointer;
+      color: $primary-500;
+      @include border-radius(29px);
+
+      span {
+        width: calc(100% - 28px);
+        text-align: center;
+        font-family: 'iransans-fnum-medium', sans-serif;
+        font-size: $font-size-sm;
+        margin-left: 4px;
+      }
+
+      .MuiSvgIcon-root {
+        color: $primary-500 !important;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .listItem {
+    display: block;
+
+    .rightSide {
+      width: 100%;
+
+      .tagsRow {
+        margin-bottom: 0;
+      }
+
+      .flyTimeRow {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        border-bottom: solid 1px $neutral-500;
+
+        .airline {
+          min-width: 61px;
+          margin-left: 8px;
+
+          .airlineLogo {
+            width: 28px;
+            height: 28px;
+            margin: 0 auto 4px;
+          }
+
+          .airlineName {
+            font-size: 10px;
+          }
+        }
+
+        .timeInfo {
+          display: inline-block;
+          vertical-align: middle;
+          min-width: 130px;
+          margin-left: 16px;
+
+          .col {
+            display: inline-block;
+            vertical-align: top;
+
+            .time {
+              font-size: $font-size-lg;
+            }
+
+            .city {
+              font-size: $font-size-xs;
+              color: $neutral-600;
+            }
+          }
+
+          img {
+            display: inline-block;
+            vertical-align: top;
+            margin: 2px 8px;
+          }
+        }
+
+        .diffTime {
+          float: left;
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .leftSide {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-right: 0;
+      border: 0;
+
+      .remainingSeats {
+        min-height: unset;
+        margin-bottom: 0;
+      }
+
+      .price {
+        margin-bottom: 0;
+
+        .number {
+          font-size: 20px;
+          margin-left: 4px;
+        }
+
+        .currency {
+          font-size: $font-size-xs;
+        }
+      }
+
+      .toggleBtn {
+        display: none;
+      }
+    }
+  }
+}

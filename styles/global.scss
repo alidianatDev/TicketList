@@ -1,0 +1,45 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+@import "@/styles/fontSize";
+@import "@/styles/fonts";
+
+
+body {
+  direction: rtl;
+  font-family: "iransans-fnum", sans-serif;
+  font-size: $font-size-sm;
+  color: $neutral-700;
+  margin: 0;
+  padding: 80px 0 120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 1680px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.innerContainer {
+  width: 1096px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}

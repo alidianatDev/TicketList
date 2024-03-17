@@ -1,0 +1,166 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+@import "@/styles/fontSize";
+
+.contentBox {
+  background: $neutral-200;
+  @include border-radius(16px);
+  overflow: hidden;
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 16px;
+    background: $primary-100;
+
+    .cityName {
+      font-family: iransans-fnum-medium, sans-serif;
+      font-size: $font-size-md;
+      color: $primary-500;
+    }
+
+    .flightTime {
+      font-size: $font-size-sm;
+      color: $neutral-700;
+
+      span {
+        font-size: $font-size-xs;
+      }
+    }
+
+    .ruleWarning {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 12px 0;
+
+      p {
+        font-size: $font-size-xs;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .body {
+    padding: 12px;
+
+    .airline {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 16px;
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        margin-left: 16px;
+        overflow: hidden;
+        @include border-radius(50%)
+      }
+
+      .info {
+        .title {
+          display: inline-block;
+          vertical-align: middle;
+          font-family: iransans-fnum-medium, sans-serif;
+          font-size: $font-size-md;
+          margin-left: 16px;
+          margin-bottom: 4px;
+        }
+      }
+
+      .fields {
+        .item {
+          display: inline-block;
+          vertical-align: middle;
+          margin-left: 16px;
+
+          span {
+            color: $neutral-600;
+            margin-left: 4px;
+          }
+        }
+      }
+    }
+
+    .flightTimeinfo {
+      position: relative;
+      padding-right: 24px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        right: 8px;
+        bottom: 46px;
+        border-right: dashed 2px $neutral-600;
+      }
+
+      .departure_arrival {
+        margin-bottom: 16px;
+
+        .city {
+          position: relative;
+          display: inline-block;
+          vertical-align: middle;
+          font-family: iransans-fnum-medium, sans-serif;
+          font-size: 20px;
+          color: $primary-500;
+          margin-left: 16px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: -20px;
+            width: 10px;
+            height: 10px;
+            background: $neutral-600;
+            @include border-radius(50%)
+          }
+        }
+
+        .date {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        .airport {
+          margin-top: 4px;
+        }
+      }
+
+      .flightTime {
+        margin: 16px 0;
+        color: $neutral-600;
+      }
+    }
+
+    .allowedBaggage {
+
+      .item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: 8px;
+
+        span {
+          font-family: iransans-fnum-medium, sans-serif;
+          color: $error-500;
+          margin-right: 4px;
+
+        }
+      }
+    }
+
+    .rulesItem {
+      font-size: $font-size-xs;
+      margin-bottom: 32px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

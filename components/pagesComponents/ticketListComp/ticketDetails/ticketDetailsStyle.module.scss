@@ -1,0 +1,111 @@
+@import "@/styles/mixins";
+@import "@/styles/colors";
+@import "@/styles/fontSize";
+
+.detailsHolder {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tabCol {
+  width: 608px;
+  max-width: 100%;
+  margin-left: 32px;
+}
+
+.priceCol {
+  width: 392px;
+  max-width: 100%;
+
+  .head {
+    font-size: $font-size-md;
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: solid 1px $neutral-400;
+  }
+
+  .body {
+    padding: 12px;
+    background: $neutral-200;
+    @include border-radius(12px);
+
+    .row {
+      padding: 16px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: solid 1px $neutral-400;
+
+      .title {
+        color: $neutral-600;
+      }
+
+      .price {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $primary-500;
+
+        .num {
+          font-size: $font-size-md;
+          margin: 0 4px;
+        }
+
+        .count {
+          font-weight: bold;
+          color: #BD1A8D
+        }
+      }
+
+
+    }
+
+    .totalRow {
+      border: none;
+
+      .title {
+        font-family: iransans-fnum-medium, sans-serif;
+        color: $neutral-700;
+      }
+
+      .price {
+        .num {
+          font-family: iransans-fnum-medium, sans-serif;
+          font-size: 20px;
+        }
+      }
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - 24px);
+      min-height: 48px;
+      background: $primary-500;
+      @include border-radius(32px);
+      margin: auto;
+      outline: none;
+      border: none;
+      font-family: iransans-fnum-medium, sans-serif;
+      font-size: $font-size-md;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+
+  .detailsHolder {
+
+    .tabCol {
+      width: 100%;
+    }
+
+    .priceCol {
+      width: 100%;
+    }
+  }
+}
